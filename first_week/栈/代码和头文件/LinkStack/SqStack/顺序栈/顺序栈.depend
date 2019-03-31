@@ -9,3 +9,13 @@
 1553872219 source:c:\users\86323\desktop\qg\陈宇第二周\栈\代码和头文件\sqstack\sqstack.c
 	"../head/SqStack.h"
 
+1554021541 source:c:\users\86323\desktop\qg\cy2\栈\代码和头文件\linkstack\sqstack\main.c
+	"SqStack.h"
+
+1553869271 c:\users\86323\desktop\qg\cy2\栈\代码和头文件\linkstack\sqstack\sqstack.h
+	<stdio.h>
+	<malloc.h>
+
+1554037382 source:c:\users\86323\desktop\qg\cy2\栈\代码和头文件\linkstack\sqstack\sqstack.c
+	"SqStack.h"
+

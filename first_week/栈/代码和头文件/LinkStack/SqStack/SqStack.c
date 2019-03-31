@@ -43,10 +43,9 @@ Status clearStack(SqStack *s)   //清空栈
         printf("该栈为空\n");
         return ERROR;
     }
-    for(;s->top<0;s->top--)
-    {
-        s->elem[s->top]=0;
-    }
+    free(s->elem);
+    s->elem=( ElemType * )malloc( s->size * sizeof(ElemType));
+    s->top=-1;
     printf("清空成功\n");
 }
 Status destroyStack(SqStack *s)  //销毁栈
@@ -54,6 +53,7 @@ Status destroyStack(SqStack *s)  //销毁栈
     free(s->elem);
     free(s);
     printf("销毁成功\n");
+    exit(0);
 }
 Status stackLength(SqStack *s,int *length)   //检测栈长度
 {
@@ -79,7 +79,7 @@ Status popStack(SqStack *s,ElemType *data)   //出栈
     if(s==NULL||isEmptyStack(s))
     {
         printf("栈为空，无法出栈\n");
-        return ERROR;
+        return 0;
     }
     *data=s->elem[s->top];
     s->top--;
@@ -108,7 +108,7 @@ void  choose(SqStack *s)
         else if(n==7)
         {
             int data;
-            popStack(s,&data);
+            if(popStack(s,&data))
             printf("出栈的元素为%d\n",data);
         }
         else if(n==1)
