@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1554002587 source:c:\users\86323\desktop\qg\陈宇第二周\四则运算\代码和头文件\计算器\counter.c
+	"counter.h"
+
+1554002596 c:\users\86323\desktop\qg\陈宇第二周\四则运算\代码和头文件\计算器\counter.h
+	<stdio.h>
+	<ctype.h>
+	<stdlib.h>
+
+1554002587 source:c:\users\86323\desktop\qg\陈宇第二周\四则运算\代码和头文件\计算器\main.c
+	"counter.h"
+

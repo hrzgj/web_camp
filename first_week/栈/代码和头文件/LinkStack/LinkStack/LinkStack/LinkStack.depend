@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1554021802 source:c:\users\86323\desktop\qg\cy2\栈\代码和头文件\linkstack\linkstack\linkstack.c
+	"LinkStack.h"
+
+1553952397 c:\users\86323\desktop\qg\cy2\栈\代码和头文件\linkstack\linkstack\linkstack.h
+	<stdio.h>
+	<malloc.h>
+
+1554021802 source:c:\users\86323\desktop\qg\cy2\栈\代码和头文件\linkstack\linkstack\main.c
+	"LinkStack.h"
+
