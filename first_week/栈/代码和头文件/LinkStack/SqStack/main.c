@@ -7,4 +7,5 @@ int main()
     s=(SqStack *)malloc(sizeof(SqStack));
     memu();
     choose(s);
+    system("pause");
 }

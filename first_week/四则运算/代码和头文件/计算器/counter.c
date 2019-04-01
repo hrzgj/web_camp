@@ -27,7 +27,7 @@ void PopStack(stack* s, Elemtype* d)
 {
         if(s->top==s->base)
         {
-            printf("\nErr!\n");
+            printf("\n空栈\n");
             return;
         }
         *d=*--(s->top);
@@ -81,7 +81,6 @@ void NiftoSuf(Elemtype* nif, Elemtype* suf)//将中缀表达式（nif）转换为后缀表达式
                 suf[j++]=c;
                 c=(char)nif[++i];
                 c2=suf[j-1];
-                printf("此时的值%c\n",c2);
                 if((c<'0'||c>'9')&&c!='.')
                 {
                     suf[j++]=' ';
@@ -221,7 +220,7 @@ Elemtype Cal(Elemtype* suf)//计算后缀表达式
         c=suf[j++];
     }
     PopStack(s,&r);
-    printf("j计算结果为%lf",r);
+    printf("计算结果为%lf",r);
     free(s);
     return r;
 }
@@ -247,10 +246,25 @@ void mainFun()
             printf("输入错误，请在表达式最后加上#\n");
             judge=1;
             free(nif);
+            continue;
+        }
+        if((char)nif[0]=='#')
+        {
+            printf("没有表达式，无法计算\n");
+            judge=1;
+            free(nif);
+            continue;
+        }
+        if((char)nif[0]=='*'||(char)nif[0]=='/')
+        {
+            printf("运算符左边没有数字\n");
+            judge=1;
+            free(nif);
+            continue;
         }
         for(int j=0;j<i-1;j++)
         {
-            if(((char)nif[j]>='('&&(char)nif[j]<='/')||((char)nif[j]>='0'&&(char)nif[j]<='9'))continue;
+            if(((char)nif[j]>='('&&(char)nif[j]<='/')||((char)nif[j]>='0'&&(char)nif[j]<='9'));
             else
             {
                 printf("请输入正确的数字和符号\n");
@@ -258,12 +272,36 @@ void mainFun()
                 judge=1;
                 break;
             }
-        }
+            if((char)nif[j]=='+'||(char)nif[j]=='-'||(char)nif[j]=='*'||(char)nif[j]=='/')
+            {
+                if((char)nif[j+1]=='+'||(char)nif[j+1]=='-'||(char)nif[j+1]=='*'||(char)nif[j+1]=='/')
+                    {
+                        printf("请不要连续输入多个运算符\n");
+                        free(nif);
+                        judge=1;
+                        break;
+                    }
+            }
+            if((char)nif[j]=='('&&(char)nif[j+1]=='-')
+            {
+                printf("表达式不合法\n");
+                free(nif);
+                judge=1;
+                break;
+            }
 
+        }
     }while(judge);
 
     NiftoSuf(nif,suf);
     printf("\n");
+    int k=0;
+    while(suf[k]!='\0')
+    {
+        char ch=(char)suf[k];
+        printf("%c",ch);
+        k++;
+    }
     Cal(suf);
     printf("\n输入y为继续，输入其他退出程序\n");
     scanf("%c",&y);
