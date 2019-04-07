@@ -11,9 +11,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <% User user = (User) session.getAttribute("user");%>
 <% if (user.getIdentity().equals("普通用户"))
-{ %>
-<jsp:forward page="UpdateSelf.jsp"></jsp:forward>
-<% }%>
+{
+        response.sendRedirect("UpdateSelf.jsp");
+     }%>
  <%UserDao u=new UserDaoImpl();
 ArrayList<User> list=u.getMaterialsList();
 int i=1;%>

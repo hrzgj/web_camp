@@ -34,14 +34,13 @@
         <font color="red">${requestScope.useridNumber}</font>
         <h5 style="color: red;">身份证为18位数字</h5>
         <p></p><span style="color: green">是否修改密码：</span>
-        <input type="button" name="user_password" value="OK" id="ok" onclick="hideen()" />
+        <input type="button"  value="OK" id="ok" onclick="hideen()" />
         <div id="div1" style="display: none">
-        <input type="text" />
+        <input type="text" name="user_password" />
         </div>
         <font color="red">${requestScope.userpassword}</font>
         <p>
             <button class="button2" type="submit">点击修改</button>
-            <jsp:forward page="Main.jsp"></jsp:forward>
         </p>
     </table>
     </form>

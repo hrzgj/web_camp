@@ -3,6 +3,7 @@ package com.chenyu.www.service;
 import com.chenyu.www.dao.impl.UserDao;
 import com.chenyu.www.dao.impl.UserDaoImpl;
 import com.chenyu.www.po.User;
+import com.chenyu.www.util.AppMD5Util;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -86,6 +87,7 @@ public class UserService {
             request.getRequestDispatcher("Register.jsp").forward(request,response);
             return;
         }
+        usePassword= AppMD5Util.getMD5(usePassword);
         User user =new User();
         user.setIdentity("普通用户");
         user.setUserIdNumber(userIdNumber);
@@ -123,15 +125,13 @@ public class UserService {
             request.getRequestDispatcher("UpdateSelf.jsp").forward(request,response);
             return;
         }
+        //密码加密
+        user.setUserPassword(AppMD5Util.getMD5(user.getUserPassword()));
         UserDao u=new UserDaoImpl();
             if(u.update(user))
             {
                 request.getSession().setAttribute("user",user);
                 request.getRequestDispatcher("UpdateSelfSuccess.jsp").forward(request,response);
-            }
-            else
-            {
-
             }
     }
 

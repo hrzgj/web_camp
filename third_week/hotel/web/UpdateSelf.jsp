@@ -33,11 +33,7 @@
         <p></p><span style="color: green">身份证：</span><input type="text" name="user_idNumber" value=<%=user.getUserIdNumber()%>>
         <font color="red">${requestScope.useridNumber}</font>
         <h5 style="color: red;">身份证为18位数字</h5>
-        <p></p><span style="color: green">是否修改密码：</span>
-        <input type="button" name="user_password" value="OK" id="ok" onclick="hideen()" />
-        <div id="div1" style="display: none">
-        <input type="text" />
-        </div>
+        <p></p><span style="color: green">密码：</span><input type="text" name="user_password" value=<%=user.getUserPassword()%>>
         <font color="red">${requestScope.userpassword}</font>
         <p>
             <button class="button2" type="submit">点击修改</button>

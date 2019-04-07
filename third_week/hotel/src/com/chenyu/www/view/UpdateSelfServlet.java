@@ -20,13 +20,10 @@ public class UpdateSelfServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = (User) request.getSession().getAttribute("user");
         user.setUserName(request.getParameter("user_name"));
-        String password=request.getParameter("user_password");
+        user.setUserPassword(request.getParameter("user_password"));
         user.setUserPhone(request.getParameter("user_phone"));
         user.setUserIdNumber(request.getParameter("user_idNumber"));
-        password= AppMD5Util.getMD5(password);
-        if(password==user.getUserPassword());
-        else  user.setUserPassword(password);
-        UserService u =new UserService();
+        UserService u=new UserService();
         u.Update(user,request,response);
 
     }

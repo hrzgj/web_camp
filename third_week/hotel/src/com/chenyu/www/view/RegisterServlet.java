@@ -22,8 +22,7 @@ public class RegisterServlet extends HttpServlet {
         String userName =request.getParameter("user_name");
         String userPhone =request.getParameter("user_phone");
         String userIdNumber=request.getParameter("user_idNumber");
-        //密码加密
-        userPassword= AppMD5Util.getMD5(userPassword);
+
         UserService u=new UserService();
         //将信息传入Service处理
         u.Register(userName,userPassword,userPhone,userAccount,userIdNumber,request,response);

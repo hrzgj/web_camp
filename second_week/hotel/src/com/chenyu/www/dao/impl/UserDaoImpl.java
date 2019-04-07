@@ -163,8 +163,9 @@ public class UserDaoImpl implements UserDao{
         Connection con=util.getCon();
         PreparedStatement psmt =null;
         int t = 0;
-        String sql="update user set user_name=?,user_phone=?,user_password=?,user_idnumber=? where user_account=?";
+
         try {
+            String sql="update user set user_name=?,user_phone=?,user_password=?,user_idnumber=? where user_account=?";
             psmt=con.prepareStatement(sql);
             psmt.setString(1,user.getUserName());
             psmt.setString(2,user.getUserPhone());
