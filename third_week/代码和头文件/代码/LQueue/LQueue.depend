@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1554724388 source:c:\users\86323\desktop\qg\web_camp\second_week\代码和头文件\代码\lqueue\main.c
+	"../../头文件/LQueue.h"
+
+1554727266 c:\users\86323\desktop\qg\web_camp\second_week\代码和头文件\头文件\lqueue.h
+	<stdio.h>
+	<string.h>
+	<malloc.h>
+
+1554729018 source:c:\users\86323\desktop\qg\web_camp\second_week\代码和头文件\代码\lqueue\lqueue.c
+	"../../头文件/LQueue.h"
+

@@ -29,14 +29,15 @@
 typedef struct node
 {
     void *data;                   //数据域指针
-    struct node *next;            //指向当前结点的下一结点
+    struct node *next;             //指向当前结点的下一结点
+    int type;
 } Node;
 
-typedef struct Lqueue
+typedef struct lqueue
 {
     Node *front;                   //队头
     Node *rear;                    //队尾
-    int length;            //队列长度
+    size_t length;            //队列长度
 } LQueue;
 
 typedef enum
@@ -80,7 +81,7 @@ Status IsEmptyLQueue( LQueue *Q);
  *    @return         : 成功-TRUE; 失败-FALSE
  *  @notice      : 队列是否空
  */
-Status GetHeadLQueue(LQueue *Q, void *e);
+Status GetHeadLQueue(LQueue *Q);
 
 /**
  *  @name        : int LengthLQueue(LQueue *Q)
@@ -98,7 +99,7 @@ int LengthLQueue(LQueue *Q);
  *    @return         : 成功-TRUE; 失败-FALSE
  *  @notice      : 队列是否为空
  */
-Status EnLQueue(LQueue *Q, void *data);
+Status EnLQueue(LQueue *Q);
 
 /**
  *  @name        : Status DeLQueue(LQueue *Q)
@@ -124,16 +125,9 @@ void ClearLQueue(LQueue *Q);
  *    @return         : None
  *  @notice      : None
  */
-Status TraverseLQueue(const LQueue *Q, void (*foo)(void *q));
+Status TraverseLQueue(LQueue *Q);
 
-/**
- *  @name        : void LPrint(void *q)
- *    @description : 操作函数
- *    @param         q 指针q
 
- *  @notice      : None
- */
-void LPrint(void *q);
 
 
 void memu();
@@ -141,7 +135,8 @@ void memu();
 
 void mainfun(LQueue *Q);
 
-int InputError(int *val);
+
+int inputError(int val,char front,char rear);
 
 /**************************************************************
  *    End-Multi-Include-Prevent Section
