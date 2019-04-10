@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1554874573 source:c:\users\86323\desktop\qg\web_camp\third_week\代码和头文件\代码\squeue\main.c
+	"../../head/AQueue.h"
+
+1554811286 c:\users\86323\desktop\qg\web_camp\third_week\代码和头文件\头文件\aqueue.h
+	<stdio.h>
+	<malloc.h>
+	<string.h>
+
+1554874573 source:c:\users\86323\desktop\qg\web_camp\third_week\代码和头文件\代码\squeue\aqeue.c
+	"../../head/AQueue.h"
+
+1554811286 c:\users\86323\desktop\qg\web_camp\third_week\代码和头文件\head\aqueue.h
+	<stdio.h>
+	<malloc.h>
+	<string.h>
+

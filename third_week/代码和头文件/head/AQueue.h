@@ -23,18 +23,31 @@
  *    Macro Define Section
  **************************************************************/
 #define MAXQUEUE 10
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<malloc.h>
+#include<string.h>
 
 /**************************************************************
  *    Struct Define Section
  **************************************************************/
 //循环队列结构
+
+typedef enum
+{
+    INT = 1,CHAR = 2,DOUBLE = 3,STRING = 4
+}Type;
+
+
 typedef struct Aqueue
 {
     void *data[MAXQUEUE];      //数据域
     int front;
     int rear;
-    size_t length;        //队列长度
+    size_t length;           //队列长度
+    int type[MAXQUEUE];    //存放进入队列的数据类型
 } AQueue;
+
 
 typedef enum
 {
@@ -104,8 +117,6 @@ Status GetHeadAQueue(AQueue *Q, void *e);
  */
 int LengthAQueue(AQueue *Q);
 
-
-
 /**
  *  @name        : Status EnAQueue(AQueue *Q, void *data)
  *    @description : 入队操作
@@ -145,18 +156,29 @@ void ClearAQueue(AQueue *Q);
  *    @return         : None
  *  @notice      : None
  */
-Status TraverseAQueue(const AQueue *Q, void (*foo)(void *q));
+Status TraverseAQueue(const AQueue *Q, void (*foo)(void *q, int typeData));
 
 
 
 /**
- *  @name        : void APrint(void *q)
+ *  @name        : void APrint(void *q, int type)
  *    @description : 操作函数
  *    @param         q 指针q
+ *  @notice      : 这里因为不知道怎么进行操作，所以增加了一个形参辅助判断数据类型
+ */
+void APrint(void *q ,int typeData);
+
+/**
+ *  @name        : void inputCheck(int *val)
+ *    @description : 检查用户输入
+ *    @param         整型指针val
  *  @notice      : None
  */
-void APrint(void *q);
 
+void inputCheck(void *val, int type);
+void Catalogue(AQueue *Q);
+
+void SelectOpe(AQueue *Q);
 /**************************************************************
  *    End-Multi-Include-Prevent Section
  **************************************************************/
