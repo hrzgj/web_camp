@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1555236376 source:c:\users\86323\desktop\qg\qg训练营第四次培训\sortproject\sort\main.c
+	"../inc/qgsort.h"
+
+1555244386 c:\users\86323\desktop\qg\qg训练营第四次培训\sortproject\inc\qgsort.h
+	<malloc.h>
+	<string.h>
+	<stdio.h>
+	<time.h>
+
+1555244953 source:c:\users\86323\desktop\qg\qg训练营第四次培训\sortproject\sort\sort.c
+	"../inc/qgsort.h"
+
